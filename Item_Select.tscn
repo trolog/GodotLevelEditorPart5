@@ -1,0 +1,229 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://ITEMS/item_spike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ITEMS/item_wolf.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ITEMS/item_slime.tscn" type="PackedScene" id=3]
+[ext_resource path="res://TabContainer.gd" type="Script" id=4]
+[ext_resource path="res://ScrollContainer.gd" type="Script" id=5]
+[ext_resource path="res://Tile_Sprites/Tile1.png" type="Texture" id=6]
+[ext_resource path="res://Tile_Sprites/Tile9.png" type="Texture" id=7]
+[ext_resource path="res://Tile_Sprites/Tile2.png" type="Texture" id=8]
+[ext_resource path="res://Tile_Sprites/Tile4.png" type="Texture" id=9]
+[ext_resource path="res://Tile_Sprites/Tile3.png" type="Texture" id=10]
+[ext_resource path="res://Tile_Sprites/Tile7.png" type="Texture" id=11]
+[ext_resource path="res://Tile_Sprites/Tile8.png" type="Texture" id=12]
+[ext_resource path="res://Tile_Sprites/Tile5.png" type="Texture" id=13]
+[ext_resource path="res://Tile_Sprites/Tile6.png" type="Texture" id=14]
+
+[node name="Item_Select" type="CanvasLayer"]
+
+[node name="TabContainer" type="TabContainer" parent="."]
+margin_left = 413.952
+margin_top = 0.545059
+margin_right = 635.952
+margin_bottom = 171.545
+tab_align = 0
+drag_to_rearrange_enabled = true
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Tiles" type="Tabs" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+tab_align = 0
+tab_close_display_policy = 2
+drag_to_rearrange_enabled = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Tiles"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Tiles/ScrollContainer"]
+margin_right = 56.0
+margin_bottom = 56.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer"]
+margin_right = 56.0
+margin_bottom = 16.0
+
+[node name="item_Tile0" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 6 )
+this_scene = null
+tile = true
+
+[node name="item_Tile1" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 16.0
+texture = ExtResource( 8 )
+this_scene = null
+tile = true
+tile_id = 1
+
+[node name="item_Tile2" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 16.0
+texture = ExtResource( 10 )
+this_scene = null
+tile = true
+tile_id = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer"]
+margin_top = 20.0
+margin_right = 56.0
+margin_bottom = 36.0
+
+[node name="item_Tile3" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 1 )]
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 9 )
+this_scene = null
+tile = true
+tile_id = 3
+
+[node name="item_Tile4" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 1 )]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 16.0
+texture = ExtResource( 13 )
+this_scene = null
+tile = true
+tile_id = 4
+
+[node name="item_Tile5" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer2" instance=ExtResource( 1 )]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 16.0
+texture = ExtResource( 14 )
+this_scene = null
+tile = true
+tile_id = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer"]
+margin_top = 40.0
+margin_right = 56.0
+margin_bottom = 56.0
+
+[node name="item_Tile6" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 1 )]
+margin_right = 16.0
+margin_bottom = 16.0
+texture = ExtResource( 11 )
+this_scene = null
+tile = true
+tile_id = 6
+
+[node name="item_Tile7" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 1 )]
+margin_left = 20.0
+margin_right = 36.0
+margin_bottom = 16.0
+texture = ExtResource( 12 )
+this_scene = null
+tile = true
+tile_id = 7
+
+[node name="item_Tile8" parent="TabContainer/Tiles/ScrollContainer/VBoxContainer/HBoxContainer3" instance=ExtResource( 1 )]
+margin_left = 40.0
+margin_right = 56.0
+margin_bottom = 16.0
+texture = ExtResource( 7 )
+this_scene = null
+tile = true
+tile_id = 8
+
+[node name="Spikes" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+tab_align = 0
+tab_close_display_policy = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Spikes"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Spikes/ScrollContainer"]
+margin_right = 16.0
+margin_bottom = 32.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Spikes/ScrollContainer/VBoxContainer"]
+margin_right = 16.0
+margin_bottom = 32.0
+
+[node name="item_spike" parent="TabContainer/Spikes/ScrollContainer/VBoxContainer/HBoxContainer" instance=ExtResource( 1 )]
+margin_right = 16.0
+margin_bottom = 32.0
+
+[node name="Creatures" type="Tabs" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 32.0
+margin_right = -4.0
+margin_bottom = -4.0
+tab_align = 0
+tab_close_display_policy = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="TabContainer/Creatures"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Creatures/ScrollContainer2"]
+margin_right = 65.0
+margin_bottom = 28.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabContainer/Creatures/ScrollContainer2/VBoxContainer"]
+margin_right = 65.0
+margin_bottom = 28.0
+
+[node name="item_spike" parent="TabContainer/Creatures/ScrollContainer2/VBoxContainer/HBoxContainer" instance=ExtResource( 2 )]
+margin_right = 45.0
+margin_bottom = 28.0
+
+[node name="item_spike2" parent="TabContainer/Creatures/ScrollContainer2/VBoxContainer/HBoxContainer" instance=ExtResource( 3 )]
+margin_left = 49.0
+margin_right = 65.0
+margin_bottom = 28.0
+[connection signal="mouse_entered" from="TabContainer" to="TabContainer" method="_on_TabContainer_mouse_entered"]
+[connection signal="mouse_exited" from="TabContainer" to="TabContainer" method="_on_TabContainer_mouse_exited"]

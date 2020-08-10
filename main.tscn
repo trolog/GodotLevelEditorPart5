@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Item_Select.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Editor_Object.gd" type="Script" id=2]
+[ext_resource path="res://mudTileset.tres" type="TileSet" id=3]
+[ext_resource path="res://FileDialog.gd" type="Script" id=4]
+
+[node name="main" type="Node2D"]
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Level"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Item_Select" parent="." instance=ExtResource( 1 )]
+
+[node name="FileDialog" type="FileDialog" parent="Item_Select"]
+visible = true
+margin_left = 26.0
+margin_top = 49.0
+margin_right = 403.0
+margin_bottom = 330.0
+window_title = "adsfasdf"
+resizable = true
+filters = PoolStringArray( "*.tscn" )
+current_file = "name"
+current_path = "res://name"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cam_container" type="Node2D" parent="."]
+position = Vector2( 0.339161, -2.15559 )
+
+[node name="Camera2D" type="Camera2D" parent="cam_container"]
+position = Vector2( 319.617, 182.432 )
+
+[node name="Editor_Object" type="Node2D" parent="."]
+position = Vector2( -0.0125961, 0.40583 )
+script = ExtResource( 2 )
+
+[node name="cursor" type="Sprite" parent="Editor_Object"]
+[connection signal="confirmed" from="Item_Select/FileDialog" to="Editor_Object" method="save_level_popup_confirmed"]
+[connection signal="hide" from="Item_Select/FileDialog" to="Editor_Object" method="_on_FileDialog_hide"]
